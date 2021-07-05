@@ -1,7 +1,7 @@
 import "axios";
 import axios from "axios";
 
-const base_url = "http://localhost:5000/post";
+const base_url = "https://cool-media-api.herokuapp.com/post";
 
 export const SubmitPost = (post) => async (dispacth) => {
 	try {
