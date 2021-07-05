@@ -68,6 +68,7 @@ export const EditPost = (id, EditedPost) => async (dispacth) => {
 		});
 	} catch (err) {
 		console.log(err);
+		console.log(updated);
 		window.alert(err.message);
 	}
 };
