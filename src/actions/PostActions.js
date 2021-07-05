@@ -16,6 +16,7 @@ export const SubmitPost = (post) => async (dispacth) => {
 		window.alert("Photo has been uploaded");
 	} catch (err) {
 		console.log(err);
+		window.alert(err.message);
 	}
 };
 
@@ -28,6 +29,7 @@ export const getPosts = () => async (dispacth) => {
 		});
 	} catch (err) {
 		console.log(err);
+		window.alert(err.message);
 	}
 };
 
@@ -40,6 +42,7 @@ export const DeletePost = (id) => async (dispacth) => {
 		});
 	} catch (err) {
 		console.log(err);
+		window.alert(err.message);
 	}
 };
 
@@ -52,6 +55,7 @@ export const LikePost = (id) => async (dispacth) => {
 		});
 	} catch (err) {
 		console.log(err);
+		window.alert(err.message);
 	}
 };
 
@@ -64,5 +68,6 @@ export const EditPost = (id, EditedPost) => async (dispacth) => {
 		});
 	} catch (err) {
 		console.log(err);
+		window.alert(err.message);
 	}
 };
