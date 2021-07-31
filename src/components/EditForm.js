@@ -15,7 +15,6 @@ const EditForm = () => {
 	const dispatch = useDispatch();
 
 	const [Input, setInput] = useState({
-		creator: post.creator,
 		title: post.title,
 		description: post.description,
 	});
@@ -59,18 +58,6 @@ const EditForm = () => {
 								value={Input.description}
 								type="text"
 								placeholder="Enter Description"
-							/>
-						</Form.Group>
-
-						<Form.Group className="mb-3" controlId="creator">
-							<Form.Label>Your name</Form.Label>
-							<Form.Control
-								onChange={(e) =>
-									setInput({ ...Input, creator: e.target.value })
-								}
-								value={Input.creator}
-								type="text"
-								placeholder="Enter Name"
 							/>
 						</Form.Group>
 

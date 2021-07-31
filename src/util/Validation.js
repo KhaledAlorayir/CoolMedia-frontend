@@ -1,6 +1,5 @@
 export const ValidateInput = (Input) => {
 	if (
-		Input.creator.trim() === "" ||
 		Input.title.trim() === "" ||
 		Input.description.trim() === "" ||
 		Input.item.trim() === ""
@@ -12,13 +11,25 @@ export const ValidateInput = (Input) => {
 };
 
 export const ValidateEdit = (Input) => {
-	if (
-		Input.creator.trim() === "" ||
-		Input.title.trim() === "" ||
-		Input.description.trim() === ""
-	) {
+	if (Input.title.trim() === "" || Input.description.trim() === "") {
 		return false;
 	} else {
 		return true;
 	}
+};
+export const ValidateSignIn = (Input) => {
+	if (Input.email.trim() === "" || Input.password.trim() === "") {
+		return false;
+	} else {
+		return true;
+	}
+};
+
+export const ValidateSignup = (Input) => {
+	for (const key in Input) {
+		if (Input[key].trim() === "") {
+			return false;
+		}
+	}
+	return true;
 };

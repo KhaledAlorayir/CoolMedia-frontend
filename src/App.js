@@ -5,6 +5,7 @@ import InputForm from "./components/InputForm";
 import Media from "./components/Media";
 import Nav from "./components/Nav";
 import Image from "./components/Image";
+import Auth from "./components/Auth";
 
 //styles
 import { GloablStyles } from "./components/GloablStyles";
@@ -30,15 +31,13 @@ const App = () => {
 			<GloablStyles />
 			<Nav />
 			<Switch>
-				<Route path="/" exact>
-					<Media />
-				</Route>
-				<Route path="/upload" exact>
-					<InputForm />
-				</Route>
-				<Route path="/image/:id" exact>
-					<Image />
-				</Route>
+				<Route path="/" component={Media} exact />
+
+				<Route path="/upload" component={InputForm} exact />
+
+				<Route path="/image/:id" component={Image} exact />
+
+				<Route path="/auth" component={Auth} exact />
 			</Switch>
 		</StyledApp>
 	);
