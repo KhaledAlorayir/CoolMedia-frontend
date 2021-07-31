@@ -12,6 +12,12 @@ const Navigation = () => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
+	const LogoutHandler = () => {
+		dispatch({ type: "LOGOUT" });
+		setUser(null);
+		history.push("/");
+	};
+
 	useEffect(() => {
 		//if token expiress
 		const token = User?.token;
@@ -25,18 +31,12 @@ const Navigation = () => {
 		}
 		//set user after redirect
 		setUser(JSON.parse(localStorage.getItem("profile")));
-	}, [location]);
+	}, [location, User?.token]);
 
 	//clears error message
 	useEffect(() => {
 		dispatch({ type: "CLEAR_ERROR" });
 	}, [dispatch, location]);
-
-	const LogoutHandler = () => {
-		dispatch({ type: "LOGOUT" });
-		setUser(null);
-		history.push("/");
-	};
 
 	return (
 		<Container>
